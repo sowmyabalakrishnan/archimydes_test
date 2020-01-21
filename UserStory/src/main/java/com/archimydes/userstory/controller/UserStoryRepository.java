@@ -3,7 +3,9 @@
  */
 package com.archimydes.userstory.controller;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.archimydes.userstory.domain.UserStory;
 
@@ -16,7 +18,6 @@ import com.archimydes.userstory.domain.UserStory;
 	// This will be AUTO IMPLEMENTED by Spring into a Bean called userStoryRepository
 	// CRUD refers Create, Read, Update, Delete
 
-	public interface UserStoryRepository extends CrudRepository<UserStory, Integer> {
-
+	public interface UserStoryRepository extends JpaRepository<UserStory, Integer> {
 	}
 
