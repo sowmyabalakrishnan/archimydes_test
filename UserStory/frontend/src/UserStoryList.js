@@ -39,26 +39,19 @@ class UserStoryList extends Component {
       return <p>Loading...</p>;
     }
 	
-	const onSelectRow=function (group) {
-              this.props.history.push({
-                pathname: '/userstories/:id',
-                 state: {
-                    key: group.id
-                } 
-            });  
-        }
-		
-		 const onLogout=function (group) {
-              this.props.history.push({
-                pathname: '/userstory/' + group.id,
-                 state: {
-                    key: group
-                } 
-            });  
-        }
+
+
+function rowClassNameFormat(row, rowIdx) {
+  // row is whole row object
+  // rowIdx is index of row
+  console.log(row)
+console.log(rowIdx)
+  return row['status'] === 'Approved' ? 
+    'GeorgeMichael-Row' : 'Other-Row';
+}
 	
 	const groupList = groups.map(group => {      
-      return <tr key={group.id}>
+      return <tr key={group.id} >
       <td style={{whiteSpace: 'nowrap'}}>{group.summary}</td>
         <td>{group.description}</td>
 		 <td>{group.type}</td>
