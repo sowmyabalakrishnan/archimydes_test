@@ -21,6 +21,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 import com.archimydes.userstory.domain.UserStory;
+import com.archimydes.userstory.repository.UserStoryRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -31,7 +32,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @SpringBootTest
 class UserStoryControllerTest {
 	
-	private static final String TEST_ORDER = "{\"description\": \"Some test description\", \"costInCents\": 200}";
+	
 	
 	
 	@Autowired
@@ -114,14 +115,6 @@ class UserStoryControllerTest {
 			return mapper.writeValueAsString(obj);
 		}
 	
-	private UserStory getCreatedOrder() {
-		List<UserStory> userStories = (List<UserStory>) repository.findAll();
-		return userStories.get(userStories.size() - 1);
-	}
-
-	private UserStory generateTestUserStory() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }
