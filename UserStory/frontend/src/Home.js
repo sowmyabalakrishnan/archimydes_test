@@ -6,6 +6,7 @@ import { Button, Container } from 'reactstrap';
 import { withCookies, Cookies  } from 'react-cookie';
 import { instanceOf } from 'prop-types';
 
+
 class Home extends Component {	
 	static propTypes = {
         cookies: instanceOf(Cookies).isRequired
@@ -14,7 +15,8 @@ class Home extends Component {
    state = {
     isAuthenticated: false,
     user: undefined,
-item:[]
+	errorMsg:'',
+	item:[]
   };
 
 constructor(props) {
@@ -24,7 +26,7 @@ constructor(props) {
 async componentDidMount() {
 	if(this.props.location.state)
 	{
-	this.setState({isAuthenticated: this.props.location.state.isAuthenticated, user: this.props.location.state.user, item: this.props.location.state.item})
+	this.setState({isAuthenticated: this.props.location.state.isAuthenticated, errorMsg: this.props.location.state.errorMsg, user: this.props.location.state.user, item: this.props.location.state.item})
 	}
   }
 
@@ -40,7 +42,7 @@ async componentDidMount() {
   render() {
   const message = this.state.user ?
       <h2>Welcome, {this.state.user.name}!</h2> :
-      <p>Please log in to the application.</p>;
+      <p>{this.state.errorMsg} Please log in to the application.</p>;
 
     const button = (this.state.isAuthenticated && this.state.item && this.state.item.roleId==true) ?
       <div>

@@ -154,8 +154,8 @@ async handleReject(event) {
               <Input type="text" name="status" id="status" value={"New"}  disabled="true" onChange={this.handleChange} />
             </FormGroup>
             <FormGroup className="col-md-5 mb-3">
-              <Label for="cost">Cost</Label>
-              <Input type="text" name="cost" id="cost" value={this.state.formItem.cost} disabled={disable} onChange={this.handleChange} />
+              <Label for="cost">Cost $</Label>
+              <Input type="text" pattern="[0-9]*" name="cost" id="cost" value={this.state.formItem.cost} disabled={disable} onChange={this.handleChange} />
             </FormGroup>
             <FormGroup className="col-md-3 mb-3">
               <Label for="eta">ETA</Label>
