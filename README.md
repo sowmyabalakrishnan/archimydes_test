@@ -31,6 +31,7 @@ This example uses the following open source libraries:
 
 # Running the tests
 
+http://localhost:8080/
 
 
 # Authors
