@@ -4,7 +4,14 @@ On logging in as a user with "User" role, the application allows them to create 
 A user with "Admin" role, on logging in,  will be able to see the list of user stories created by different users to review. AdminUser can edit the assigned story and either approve or reject the story. 
 
 # Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To install this application, run the following commands:
+
+
+This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
+
+To run the server, run:
+
+./mvnw spring-boot:run
 
 # Prerequisites
 What things you need to install the software and how to install them
