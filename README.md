@@ -5,15 +5,17 @@ A user with "Admin" role, on logging in,  will be able to see the list of user s
 
 # Getting Started
 To install this application, run the following commands:
-
+```
 git clone https://github.com/sowmyabalakrishnan/archimydes_test.git git UserStory
 cd UserStory
+```
 
 This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
 
 To run the server, run:
-
+```
 ./mvnw spring-boot:run
+```
 
 # Prerequisites
 
