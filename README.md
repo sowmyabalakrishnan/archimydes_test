@@ -25,13 +25,13 @@ To run the server, run:
 * Eclipse
 
 This example uses the following open source libraries:
-*React
-*Spring Boot
-*Spring Security
+* React
+* Spring Boot
+* Spring Security
 
 # Running the tests
 
-# Built With
+
 
 # Authors
 Sowmya Balakrishnan
