@@ -18,7 +18,16 @@ To run the server, run:
 ```
 
 # Prerequisites
+* Java 8
+* maven
+* npm and node.js
+* mySQL
+* Eclipse
 
+This example uses the following open source libraries:
+*React
+*Spring Boot
+*Spring Security
 
 # Running the tests
 
