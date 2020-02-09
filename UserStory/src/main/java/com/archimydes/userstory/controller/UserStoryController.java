@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +34,7 @@ public UserStoryController(UserStoryRepository userStoryRepository, UserReposito
 	  @GetMapping(path="/api/getAllStories")
 	  public @ResponseBody Collection<UserStory> getAllStories() {
     	System.out.println("In UserStoryController :: getAllStories()");
-    	return userStoryRepository.findAll();
+    	return userStoryRepository.findAll(Sort.by(Sort.Direction.ASC, "status"));
     	}
 	  
 	  @GetMapping("/api/getStory/{id}")

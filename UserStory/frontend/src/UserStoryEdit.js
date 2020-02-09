@@ -98,7 +98,7 @@ async handleReject(event) {
     const {formItem} = this.state;
 //console.log("formItem.id -- "+formItem.id);
     const title = <h2>{formItem.id ? 'Edit User Story' : 'Add User Story'}</h2>;
- 	const disable = formItem.id ? true : false;
+ 	const disable = ((formItem.id && (this.props.location.state.item.roleId) && formItem.status !== "Approved" && formItem.status !== "Rejected")||(this.props.match.params.id  && this.props.match.params.id == 'new')) ? false : true;
 //console.log("disable -- "+disable);
 //console.log("this.props.location.state.item.roleId -- "+!(this.props.location.state.item.roleId));
 	const button = (this.props.match.params.id  && this.props.match.params.id !== 'new' && this.state.formItem.status !== "Approved" && this.state.formItem.status !== "Rejected" && (this.props.location.state.item.roleId)) ?
@@ -108,7 +108,8 @@ async handleReject(event) {
 	</div>
 		: ((this.props.match.params.id  && this.props.match.params.id == 'new') ?//this.state.formItem.status !== "Approved" && this.state.formItem.status !== "Rejected") ?
 	<Button color="success" type="Submit">Assign for review</Button>
-	:<Button color="primary"><Link to={{pathname: '/userstories', state: {user: this.state.user, item: this.state.item}}}>Back</Link></Button>)
+	:
+	<Button color="primary"><Link to={{pathname: '/userstories', state: {user: this.state.user, item: this.state.item}}}>Back</Link></Button>)
 			
     return <div>
       <AppNavbar/>
@@ -154,8 +155,8 @@ async handleReject(event) {
               <Input type="text" name="status" id="status" value={"New"}  disabled="true" onChange={this.handleChange} />
             </FormGroup>
             <FormGroup className="col-md-5 mb-3">
-              <Label for="cost">Cost $</Label>
-              <Input type="text" pattern="[0-9]*" name="cost" id="cost" value={this.state.formItem.cost} disabled={disable} onChange={this.handleChange} />
+              <Label for="cost">Cost (Enter amount in $)</Label>
+              <Input type="text" pattern="[0-9]*" name="cost" id="cost" value={this.state.formItem.cost} disabled={disable} onChange={this.handleChange}/>
             </FormGroup>
             <FormGroup className="col-md-3 mb-3">
               <Label for="eta">ETA</Label>

@@ -31,11 +31,11 @@ async componentDidMount() {
   }
 
   logout() {
-    fetch('/api/logout', {method: 'POST', credentials: 'include',
-      headers: {'X-XSRF-TOKEN': this.state.csrfToken}}).then(res => res.json())
+    fetch('/api/logout', {method: 'POST', credentials: 'include'}).then(res => res.json())
       .then(response => {
-        window.location.href = response.logoutUrl + "?id_token_hint=" +
-          response.idToken + "&post_logout_redirect_uri=" + window.location.origin;
+       // window.location.href = response.logoutUrl + "?id_token_hint=" +
+        //  response.idToken + "&post_logout_redirect_uri=" + window.location.origin;
+window.location.href = window.location.origin;
       });
   }
 
